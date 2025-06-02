@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScrubFast - Fast. Clean. Sparkling Kitchens.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset & Base Styles */
+        /* CSS Reset and Variables */
         * {
             margin: 0;
             padding: 0;
@@ -15,59 +14,36 @@
         }
         
         :root {
-            --primary: #2E8B57;
-            --primary-light: #3CB371;
-            --secondary: #5F9EA0;
-            --accent: #FF6B6B;
-            --light: #F8F9FA;
-            --dark: #343A40;
-            --gray: #6C757D;
-            --light-gray: #E9ECEF;
+            --primary: #4CAF50;
+            --primary-light: #8BC34A;
+            --primary-dark: #388E3C;
+            --secondary: #03A9F4;
+            --secondary-light: #B3E5FC;
+            --accent: #FFC107;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #fff;
             --transition: all 0.3s ease;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.1);
             --border-radius: 8px;
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
             line-height: 1.6;
-            color: var(--dark);
-            background-color: #fff;
-            overflow-x: hidden;
+            background-color: var(--light);
         }
         
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 1rem;
             color: var(--dark);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-            color: var(--gray);
         }
         
         a {
@@ -77,86 +53,96 @@
         }
         
         a:hover {
-            color: var(--primary-light);
+            color: var(--primary-dark);
         }
         
         img {
             max-width: 100%;
+            height: auto;
         }
         
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 1.5rem;
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 28px;
-            background: var(--primary);
-            color: white;
-            border-radius: var(--border-radius);
-            font-weight: 500;
-            transition: var(--transition);
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--white);
             border: none;
-            cursor: pointer;
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
             text-align: center;
-        }
-        
-        .btn:hover {
-            background: var(--primary-light);
-            color: white;
-            transform: translateY(-3px);
             box-shadow: var(--shadow);
         }
         
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            color: var(--white);
+        }
+        
         .btn-outline {
-            background: transparent;
+            background-color: transparent;
             border: 2px solid var(--primary);
             color: var(--primary);
         }
         
         .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
             background: var(--primary);
-            color: white;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
         }
         
         .text-center {
             text-align: center;
         }
         
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        /* Header & Navigation */
+        /* Header Styles */
         header {
-            position: fixed;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            background: white;
-            box-shadow: var(--shadow);
             z-index: 1000;
-            padding: 15px 0;
         }
         
-        .navbar {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
         
         .logo {
@@ -164,6 +150,12 @@
             align-items: center;
         }
         
+        .logo img {
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 5%;
+        }
+
         .logo h1 {
             font-size: 1.8rem;
             margin-bottom: 0;
@@ -174,115 +166,78 @@
             color: var(--secondary);
         }
         
-        .nav-links {
+        .nav-menu {
             display: flex;
             list-style: none;
         }
         
-        .nav-links li {
-            margin-left: 30px;
+        .nav-menu li {
+            margin-left: 2rem;
         }
         
-        .nav-links a {
+        .nav-menu a {
             color: var(--dark);
-            font-weight: 500;
-            font-size: 1.05rem;
+            font-weight: 600;
             position: relative;
+            padding: 0.5rem 0;
         }
         
-        .nav-links a:after {
+        .nav-menu a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--primary);
+            height: 3px;
+            background-color: var(--primary);
             transition: var(--transition);
         }
         
-        .nav-links a:hover:after {
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
             width: 100%;
         }
         
-        .nav-links a.active {
-            color: var(--primary);
-        }
-        
-        .nav-links a.active:after {
-            width: 100%;
-        }
-        
-        .hamburger {
+        .nav-toggle {
             display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
             cursor: pointer;
+            color: var(--dark);
         }
         
         /* Hero Section */
         .hero {
-            padding: 160px 0 80px;
-            background: linear-gradient(135deg, rgba(46, 139, 87, 0.1) 0%, rgba(95, 158, 160, 0.1) 100%);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(3, 169, 244, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%234CAF50" opacity="0.1"/><circle cx="30" cy="30" r="5" fill="%234CAF50" opacity="0.3"/><circle cx="70" cy="70" r="8" fill="%2303A9F4" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 8rem 0;
+            text-align: center;
         }
         
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(46, 139, 87, 0.15) 0%, rgba(95, 158, 160, 0.15) 100%);
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 600px;
-        }
-        
-        .hero h1 {
+        .hero h2 {
             font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--dark);
+            margin-bottom: 1.5rem;
+            color: var(--white);
         }
         
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--gray);
-        }
-        
-        .hero-btns {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .hero-image {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50%;
-            max-width: 600px;
-            z-index: 1;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
         }
         
         /* Products Section */
-        .products {
-            background: var(--light);
-        }
-        
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
         }
         
         .product-card {
-            background: white;
+            background-color: var(--white);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -291,215 +246,214 @@
         
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-hover);
         }
         
         .product-img {
-            height: 220px;
-            background: var(--light-gray);
+            height: 200px;
+            background-color: var(--secondary-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            padding: 1rem;
         }
         
-        .product-img i {
-            font-size: 4rem;
-            color: var(--primary-light);
+        .product-img img {
+          max-width: 80%;
+          max-height: 80%;
+          object-fit: contain;
+        } 
+        
+        .product-content {
+            padding: 1.5rem;
         }
         
-        .product-info {
-            padding: 25px;
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
         }
         
-        .product-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+        .product-sku {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
         }
         
         .product-price {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--primary);
-            margin: 15px 0;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
         }
         
-        .product-rating {
-            color: #FFC107;
-            margin: 10px 0;
+        .product-pack {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
         }
         
         /* About Section */
+        .about {
+            background-color: var(--light-gray);
+        }
+        
         .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-img {
-            flex: 1;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            background: var(--light-gray);
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .about-img i {
-            font-size: 6rem;
-            color: var(--primary-light);
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .feature-card {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            padding: 30px 20px;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .mission-box {
+            background-color: var(--white);
+            padding: 2rem;
             border-radius: var(--border-radius);
-            background: white;
             box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(46, 139, 87, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-        
-        .feature-icon i {
-            font-size: 1.8rem;
-            color: var(--primary);
+            margin-top: 2rem;
+            border-left: 4px solid var(--primary);
         }
         
         /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, rgba(46, 139, 87, 0.03) 0%, rgba(95, 158, 160, 0.03) 100%);
-        }
-        
         .contact-container {
-            display: flex;
-            gap: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
         }
         
         .contact-info {
-            flex: 1;
-        }
-        
-        .contact-form {
-            flex: 1;
-            background: white;
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: var(--border-radius);
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
-        }
-        
-        .contact-details {
-            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
         
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 25px;
+            gap: 1rem;
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(46, 139, 87, 0.1);
+            background-color: var(--primary-light);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
             flex-shrink: 0;
         }
         
-        .contact-icon i {
-            font-size: 1.2rem;
-            color: var(--primary);
+        .contact-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
         }
         
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
-            padding: 70px 0 20px;
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 4rem 0 2rem;
         }
         
-        .footer-content {
+        .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
         
-        .footer-col h3 {
-            color: white;
-            font-size: 1.4rem;
-            margin-bottom: 25px;
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary-light);
+        }
+        
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-title {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 0.5rem;
         }
         
-        .footer-col h3:after {
+        .footer-title::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
+            width: 50px;
             height: 3px;
-            background: var(--primary);
+            background-color: var(--primary);
         }
         
         .footer-links {
@@ -507,11 +461,11 @@
         }
         
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 0.75rem;
         }
         
         .footer-links a {
-            color: #ddd;
+            color: var(--light-gray);
             transition: var(--transition);
         }
         
@@ -520,128 +474,76 @@
             padding-left: 5px;
         }
         
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-        
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #aaa;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
             font-size: 0.9rem;
         }
         
         /* Responsive Design */
         @media (max-width: 992px) {
-            .hero {
-                padding: 140px 0 60px;
+            .hero h2 {
+                font-size: 2.5rem;
             }
             
-            .hero-content {
-                max-width: 100%;
-            }
-            
-            .hero-image {
-                position: relative;
-                width: 100%;
-                max-width: 100%;
-                transform: none;
-                margin-top: 40px;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .contact-container {
-                flex-direction: column;
+            .hero p {
+                font-size: 1.25rem;
             }
         }
         
         @media (max-width: 768px) {
-            .hamburger {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                height: calc(100vh - 70px);
+                padding: 2rem;
+                transition: var(--transition);
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+            
+            .nav-toggle {
                 display: block;
             }
             
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                right: -100%;
-                width: 250px;
-                height: calc(100vh - 80px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 40px 20px;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: var(--transition);
+            .hero {
+                padding: 6rem 0;
             }
             
-            .nav-links.active {
-                right: 0;
+            .hero h2 {
+                font-size: 2rem;
             }
             
-            .nav-links li {
-                margin: 15px 0;
+            .hero p {
+                font-size: 1.1rem;
             }
             
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-            }
-            
-            .hero-btns .btn {
-                width: 100%;
+            .section {
+                padding: 3rem 0;
             }
         }
         
         @media (max-width: 576px) {
-            section {
-                padding: 60px 0;
+            .hero h2 {
+                font-size: 1.75rem;
             }
             
-            .hero {
-                padding: 120px 0 40px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .product-card {
-                max-width: 300px;
-                margin: 0 auto;
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -649,132 +551,188 @@
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <h1>Scrub<span>Fast</span></h1>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="ScrubFast Logo">
+                <h1>Scrub<span>Fast</span></h1>
+            </div>
+            <button class="nav-toggle" id="navToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
-                <h1>Fast. Clean. Sparkling Kitchens.</h1>
-                <p>Discover our premium collection of eco-friendly kitchen scrubs designed to make your cleaning routine faster, easier, and more effective.</p>
-                <div class="hero-btns">
-                    <a href="#products" class="btn">Shop Products</a>
-                    <a href="#about" class="btn btn-outline">Learn More</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div style="background: #e0f2e9; height: 400px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-broom" style="font-size: 8rem; color: #2E8B57;"></i>
-                </div>
-            </div>
+            <h2>Fast. Clean. Sparkling Kitchens.</h2>
+            <p>High-quality kitchen cleaning products that make your chores faster and more efficient</p>
+            <a href="#products" class="btn">View Products</a>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section class="products" id="products">
+    <section class="section" id="products">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Products</h2>
-                <p>Premium cleaning solutions for every kitchen need</p>
-            </div>
+            <h2 class="section-title">Our Products</h2>
             <div class="products-grid">
                 <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-scrubber"></i>
+                      <img src="assets/product1.png" alt="green pad">
                     </div>
-                    <div class="product-info">
-                        <h3>Eco Scrub Pad</h3>
-                        <p>Biodegradable scrub pad perfect for non-stick cookware and delicate surfaces.</p>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(142)</span>
-                        </div>
-                        <div class="product-price">$7.99</div>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+                    <div class="product-content">
+                        <h3 class="product-title">Green Pad</h3>
+                        <div class="product-sku">SK-40120</div>
+                        <div class="product-price">₹40/-</div>
+                        <div class="product-pack">3 pcs/pack, 120 packs/carton</div>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-pump-soap"></i>
+                      <img src="assets/product2.png" alt="sponge">
                     </div>
-                    <div class="product-info">
-                        <h3>Heavy Duty Scrub</h3>
-                        <p>Extra tough scrubber for baked-on grease and stubborn stains. Scratch-resistant.</p>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>(98)</span>
-                        </div>
-                        <div class="product-price">$9.99</div>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+                    <div class="product-content">
+                        <h3 class="product-title">Sponge</h3>
+                        <div class="product-sku">SK-28180</div>
+                        <div class="product-price">₹280/-</div>
+                        <div class="product-pack">1 pc/pack, 180 packs/carton</div>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-leaf"></i>
+                      <img src="assets/product3.png" alt="heavy duty scrub">
                     </div>
-                    <div class="product-info">
-                        <h3>Bamboo Brush Set</h3>
-                        <p>Sustainable bamboo brushes with replaceable heads. Perfect for bottles and jars.</p>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span>(86)</span>
-                        </div>
-                        <div class="product-price">$12.99</div>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+                    <div class="product-content">
+                        <h3 class="product-title">Heavy Duty (20g, 430 Grade)</h3>
+                        <div class="product-sku">SK-28200</div>
+                        <div class="product-price">₹28/-</div>
+                        <div class="product-pack">1 pc/pack, 200 packs/carton</div>
                     </div>
                 </div>
                 
                 <!-- Product 4 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <i class="fas fa-hand-sparkles"></i>
+                      <img src="assets/product4.png" alt="prduct1">
                     </div>
-                    <div class="product-info">
-                        <h3>Microfiber Magic Cloth</h3>
-                        <p>Streak-free cleaning cloth that requires no chemicals. Absorbs 10x its weight.</p>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(201)</span>
-                        </div>
-                        <div class="product-price">$14.99</div>
-                        <a href="#" class="btn btn-outline">Add to Cart</a>
+                    <div class="product-content">
+                        <h3 class="product-title">Scrub Pad</h3>
+                        <div class="product-sku">SK-29180</div>
+                        <div class="product-price">₹29/-</div>
+                        <div class="product-pack">2 pcs/pack, 180 packs/carton</div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-img">
+                      <img src="assets/product5.png" alt="prduct1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Metallic Pad</h3>
+                        <div class="product-sku">SK-39180</div>
+                        <div class="product-price">₹39/-</div>
+                        <div class="product-pack">1 pc/pack, 180 packs/carton</div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-img">
+                      <img src="assets/product6.png" alt="prduct1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Heavy Duty (10g, 430 Grade)</h3>
+                        <div class="product-sku">SK-20200</div>
+                        <div class="product-price">₹18/-</div>
+                        <div class="product-pack">1 pc/pack, 200 packs/carton</div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-img">
+                      <img src="assets/product7.png" alt="prduct1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Cellulose Wips (4 colours)</h3>
+                        <div class="product-sku">SK-299120</div>
+                        <div class="product-price">₹299/-</div>
+                        <div class="product-pack">4 packs/pack, 120 packs/carton</div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-img">
+                      <img src="assets/product8.png" alt="prduct1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Floor Cloth</h3>
+                        <div class="product-sku">SK-7960</div>
+                        <div class="product-price">₹79/-</div>
+                        <div class="product-pack">2 packs/pack, 60 packs/carton</div>
+                    </div>
+                </div>
+                
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-img">
+                      <img src="assets/product9.png" alt="prduct1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Loofah (4 colours)</h3>
+                        <div class="product-sku">SK-9960</div>
+                        <div class="product-price">₹99/-</div>
+                        <div class="product-pack">1 pc/pack, 60 packs/carton</div>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <div class="product-img">
+                      <img src="assets/product10.png" alt="prduct1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Handle Loofah</h3>
+                        <div class="product-sku">SK-18960</div>
+                        <div class="product-price">₹189/-</div>
+                        <div class="product-pack">1 pc/pack, 60 packs/carton</div>
+                    </div>
+                </div>
+                
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <div class="product-img">
+                      <img src="assets/product11.png" alt="prduct1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Dish Cloth</h3>
+                        <div class="product-sku">SK-7254</div>
+                        <div class="product-price">₹72/-</div>
+                        <div class="product-pack">6 pcs/pack, 54 dozen/carton</div>
+                    </div>
+                </div>
+                
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <div class="product-img">
+                      <img src="assets/product12.png" alt="prduct1">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Tile Brush</h3>
+                        <div class="product-sku">SK-39120</div>
+                        <div class="product-price">₹39/-</div>
+                        <div class="product-pack">1 pc/pack, 120 packs/carton</div>
                     </div>
                 </div>
             </div>
@@ -782,137 +740,77 @@
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="section about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>About ScrubFast</h2>
-                <p>Our mission is to transform kitchen cleaning</p>
-            </div>
-            
+            <h2 class="section-title">About Us</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>Founded in 2023, ScrubFast is on a mission to revolutionize kitchen cleaning with eco-friendly, effective products that save you time and effort.</p>
-                    <p>We believe that cleaning shouldn't be a chore. Our products are designed to make the process faster, more efficient, and environmentally responsible.</p>
-                    <p>All ScrubFast products are made from sustainable materials, are 100% plastic-free, and come in recyclable packaging.</p>
-                    <div class="hero-btns" style="margin-top: 30px;">
-                        <a href="#contact" class="btn">Get in Touch</a>
-                    </div>
-                </div>
-                <div class="about-img">
-                    <i class="fas fa-seedling"></i>
-                </div>
-            </div>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <h3>Eco-Friendly</h3>
-                    <p>All products made from sustainable, biodegradable materials</p>
-                </div>
+                <p>ScrubFast is a leading provider of high-quality kitchen cleaning products designed to make your daily chores easier, faster, and more effective. Founded with a passion for clean kitchens and a commitment to excellence, we've been serving households across India since 2018.</p>
+                <p>Our mission is simple: to deliver cleaning solutions that combine efficiency with environmental responsibility. We understand the challenges of maintaining a sparkling kitchen in today's busy world, and we're here to help you overcome them.</p>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Fast Cleaning</h3>
-                    <p>Engineered to reduce scrubbing time by up to 50%</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Non-Toxic</h3>
-                    <p>Safe for your family and the environment</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Quality Guarantee</h3>
-                    <p>30-day satisfaction guarantee on all products</p>
+                <div class="mission-box">
+                    <h3>Our Mission</h3>
+                    <p>ScrubFast aims to deliver effective, eco-friendly, and affordable cleaning solutions for Indian households. We believe that everyone deserves a clean, hygienic kitchen without spending excessive time or money.</p>
+                    <p>Through continuous innovation and a deep understanding of our customers' needs, we develop products that simplify cleaning while respecting our environment.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="section" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>We'd love to hear from you</p>
-            </div>
-            
+            <h2 class="section-title">Contact Us</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>Have questions about our products? Want to become a retailer? Reach out to our team and we'll get back to you within 24 hours.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Our Location</h4>
-                                <p>SK ENTERPRISE, G.F.63, Akbar Pur Majra, Near Jaton Wali Choupal, North West Delhi 110036</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Phone Number</h4>
-                                <p>+91-9319973630</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email Address</h4>
-                                <p>sales@scrubfast.com</p>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>SK ENTERPRISE, G.F.63, Akbar Pur Majra,<br>Near Jaton Wali Choupal,<br>North West Delhi 110036</p>
                         </div>
                     </div>
                     
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91-9319973630</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>sales@scrubfast.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <h4>Website</h4>
+                            <p>www.scrubfast.com</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <h3>Send a Message</h3>
-                    <form>
+                    <h3>Send us a message</h3>
+                    <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="Your Name">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="Your Email">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" placeholder="Subject">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your email" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+                            <textarea id="message" class="form-control" placeholder="Your message" required></textarea>
                         </div>
                         
                         <button type="submit" class="btn">Send Message</button>
@@ -925,20 +823,20 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>ScrubFast</h3>
-                    <p>Making kitchen cleaning fast, easy, and eco-friendly since 2023.</p>
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Scrub<span>Fast</span></a>
+                    <p>Fast. Clean. Sparkling Kitchens. We provide high-quality, eco-friendly cleaning products for modern Indian households.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">ig</a>
                     </div>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#products">Products</a></li>
@@ -947,52 +845,43 @@
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h3>Our Products</h3>
+                <div>
+                    <h4 class="footer-title">Our Products</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Eco Scrub Pad</a></li>
-                        <li><a href="#">Heavy Duty Scrub</a></li>
-                        <li><a href="#">Bamboo Brush Set</a></li>
-                        <li><a href="#">Microfiber Magic Cloth</a></li>
+                        <li><a href="#">Green Pads</a></li>
+                        <li><a href="#">Sponges</a></li>
+                        <li><a href="#">Scrub Pads</a></li>
+                        <li><a href="#">Loofahs</a></li>
+                        <li><a href="#">Brushes</a></li>
                     </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to get special offers and cleaning tips</p>
-                    <div class="form-group" style="margin-top: 20px;">
-                        <input type="email" placeholder="Your Email">
-                        <button class="btn" style="margin-top: 10px; width: 100%;">Subscribe</button>
-                    </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 ScrubFast. All rights reserved. | Designed for GitHub Pages</p>
-                <p style="margin-top: 10px;"><a href="#" style="color: #aaa;">Privacy Policy</a> | <a href="#" style="color: #aaa;">Terms of Service</a></p>
+                <p>&copy; 2025 ScrubFast. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
         
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
         });
         
         // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+                navMenu.classList.remove('active');
             });
         });
         
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
@@ -1005,10 +894,47 @@
             });
         });
         
-        // Sticky header on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
+        // Simple form validation
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                // In a real application, this would submit to a server
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+        
+        // Highlight active navigation link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
